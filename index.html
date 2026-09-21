@@ -218,11 +218,15 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-gray-600">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600">
         <a href="#inicio" class="hover:text-brand-600 transition-colors">Inicio</a>
         <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios y presupuesto</a>
         <a href="#ventajas" class="hover:text-brand-600 transition-colors">Por qué elegirme</a>
         <a href="#testimonios" class="hover:text-brand-600 transition-colors">Opiniones</a>
+        <a href="#auditoria" class="hover:text-brand-600 transition-colors flex items-center gap-1.5 text-brand-600 font-bold">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+          <span>Audita tu web</span>
+        </a>
         <a href="#blog" class="hover:text-brand-600 transition-colors">Blog</a>
       </nav>
 
@@ -246,6 +250,10 @@
       <a href="#servicios" class="mobile-link block text-base font-semibold text-gray-700 hover:text-brand-600">Servicios y presupuesto</a>
       <a href="#ventajas" class="mobile-link block text-base font-semibold text-gray-700 hover:text-brand-600">Por qué elegirme</a>
       <a href="#testimonios" class="mobile-link block text-base font-semibold text-gray-700 hover:text-brand-600">Opiniones</a>
+      <a href="#auditoria" class="mobile-link block text-base font-bold text-brand-600 hover:text-brand-700 flex items-center gap-2">
+        <i data-lucide="zap" class="w-4 h-4 text-amber-500"></i>
+        <span>Audita tu página web (Gratis)</span>
+      </a>
       <a href="#blog" class="mobile-link block text-base font-semibold text-gray-700 hover:text-brand-600">Blog</a>
       <div class="pt-2">
         <a href="#inicio" class="w-full text-center block bg-brand-500 text-white py-3 rounded-xl font-bold">
@@ -1141,6 +1149,233 @@
 
 
     <!-- ========================================================
+         SECCIÓN: AUDITA TU PÁGINA WEB (Google PageSpeed Insights Engine Gratis)
+    ======================================================== -->
+    <section id="auditoria" class="py-24 bg-gradient-to-b from-white via-indigo-50/25 to-white relative overflow-hidden border-t border-slate-200/80">
+      <!-- Glow ambient lights -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-brand-500/10 via-purple-500/5 to-transparent blur-[140px] rounded-full pointer-events-none -z-10"></div>
+
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200/70 mb-3 font-mono">
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-500"></i>
+            <span>Google PageSpeed Insights Engine • 100% Gratis</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-dark tracking-tight leading-tight">
+            Audita la velocidad y el SEO de tu web al instante
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg mt-3 leading-relaxed">
+            Comprueba en tiempo real cómo califica Google tu página en teléfonos móviles, su velocidad de carga real y si estás perdiendo clientas potenciales por lentitud.
+          </p>
+        </div>
+
+        <!-- Auditor Card Container -->
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/90 relative overflow-hidden">
+          
+          <!-- Top subtle border gradient -->
+          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-400 via-brand-500 to-purple-600"></div>
+
+          <!-- Input Form -->
+          <form id="pagespeed-form" onsubmit="runPageSpeedAudit(event)" class="space-y-4">
+            <label for="pagespeed-url" class="block text-xs sm:text-sm font-bold text-dark uppercase tracking-wider font-mono">
+              Introduce la URL de tu página web:
+            </label>
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                  <i data-lucide="globe" class="w-5 h-5"></i>
+                </div>
+                <input 
+                  type="text" 
+                  id="pagespeed-url" 
+                  placeholder="ejemplo.com o https://tu-negocio.es" 
+                  required
+                  class="w-full pl-12 pr-4 py-4 rounded-2xl bg-slate-50 border border-slate-300 text-dark text-sm sm:text-base font-medium placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all shadow-inner"
+                />
+              </div>
+              <button 
+                type="submit" 
+                id="pagespeed-btn"
+                class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-dark hover:bg-brand-600 text-white rounded-2xl font-bold text-sm sm:text-base tracking-wide shadow-lg shadow-brand-500/20 active:scale-95 transition-all duration-200 flex-shrink-0">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+                <span>Auditar Gratis</span>
+              </button>
+            </div>
+
+            <!-- Quick Suggestions / Demos -->
+            <div class="flex items-center gap-2 pt-1 flex-wrap text-xs text-slate-500">
+              <span class="font-medium">O prueba una demo:</span>
+              <button type="button" onclick="setAuditUrl('luciaschnell.vercel.app')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">luciaschnell.vercel.app</button>
+              <button type="button" onclick="setAuditUrl('apple.com')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">apple.com</button>
+              <button type="button" onclick="setAuditUrl('zara.com')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">zara.com</button>
+            </div>
+          </form>
+
+          <!-- Loading State (Hidden by default) -->
+          <div id="pagespeed-loading" class="hidden pt-8 pb-4 text-center space-y-4">
+            <div class="w-16 h-16 mx-auto rounded-full border-4 border-slate-100 border-t-brand-600 animate-spin"></div>
+            <div class="space-y-1">
+              <p id="pagespeed-loading-step" class="text-base font-bold text-dark font-display">Conectando con la API de Google PageSpeed...</p>
+              <p class="text-xs text-slate-500 font-mono">Simulando navegación móvil en red 4G (10 - 15 segundos)</p>
+            </div>
+            
+            <!-- Animated progress bar -->
+            <div class="w-full max-w-md mx-auto bg-slate-100 rounded-full h-2 overflow-hidden">
+              <div id="pagespeed-progress-bar" class="bg-gradient-to-r from-brand-500 to-emerald-400 h-2 rounded-full transition-all duration-300 w-1/4"></div>
+            </div>
+          </div>
+
+          <!-- Error State (Hidden by default) -->
+          <div id="pagespeed-error" class="hidden mt-6 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs sm:text-sm flex items-start gap-3">
+            <i data-lucide="alert-circle" class="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5"></i>
+            <div>
+              <p class="font-bold">No se ha podido auditar la URL indicada.</p>
+              <p class="text-xs text-rose-700 mt-0.5" id="pagespeed-error-msg">Asegúrate de que la página web es pública y accesible en internet (ej: tucuenta.com).</p>
+            </div>
+          </div>
+
+          <!-- Results Dashboard (Hidden by default) -->
+          <div id="pagespeed-results" class="hidden mt-8 pt-8 border-t border-slate-100 space-y-8 animate-fadeIn">
+            
+            <!-- Audited Target Header -->
+            <div class="flex items-center justify-between gap-4 flex-wrap pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 font-bold">
+                  <i data-lucide="smartphone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 font-mono">Informe de Rendimiento Móvil</span>
+                  <h4 id="result-url-display" class="text-base font-bold text-dark font-mono truncate max-w-xs sm:max-w-md"></h4>
+                </div>
+              </div>
+              <span class="px-3 py-1 bg-emerald-50 text-emerald-700 font-bold text-xs rounded-full border border-emerald-200 flex items-center gap-1 font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Google Lighthouse Engine</span>
+              </span>
+            </div>
+
+            <!-- 4 Score Circles Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              
+              <!-- Performance / Rendimiento -->
+              <div class="p-4 rounded-2xl bg-slate-50/80 border border-slate-200 flex flex-col items-center text-center">
+                <div class="relative w-20 h-20 flex items-center justify-center mb-2">
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-slate-200 stroke-current stroke-[3.5]" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path id="score-perf-circle" class="stroke-current stroke-[3.5] transition-all duration-1000 ease-out" stroke-dasharray="0, 100" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span id="score-perf-val" class="absolute text-xl font-display font-extrabold text-dark">--</span>
+                </div>
+                <span class="text-xs font-bold text-dark">Velocidad</span>
+                <span id="score-perf-label" class="text-[11px] font-medium text-slate-500">Móvil</span>
+              </div>
+
+              <!-- SEO -->
+              <div class="p-4 rounded-2xl bg-slate-50/80 border border-slate-200 flex flex-col items-center text-center">
+                <div class="relative w-20 h-20 flex items-center justify-center mb-2">
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-slate-200 stroke-current stroke-[3.5]" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path id="score-seo-circle" class="stroke-current stroke-[3.5] transition-all duration-1000 ease-out" stroke-dasharray="0, 100" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span id="score-seo-val" class="absolute text-xl font-display font-extrabold text-dark">--</span>
+                </div>
+                <span class="text-xs font-bold text-dark">SEO Google</span>
+                <span class="text-[11px] font-medium text-slate-500">Posición</span>
+              </div>
+
+              <!-- Accesibilidad -->
+              <div class="p-4 rounded-2xl bg-slate-50/80 border border-slate-200 flex flex-col items-center text-center">
+                <div class="relative w-20 h-20 flex items-center justify-center mb-2">
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-slate-200 stroke-current stroke-[3.5]" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path id="score-acc-circle" class="stroke-current stroke-[3.5] transition-all duration-1000 ease-out" stroke-dasharray="0, 100" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span id="score-acc-val" class="absolute text-xl font-display font-extrabold text-dark">--</span>
+                </div>
+                <span class="text-xs font-bold text-dark">Accesibilidad</span>
+                <span class="text-[11px] font-medium text-slate-500">UX / Usabilidad</span>
+              </div>
+
+              <!-- Buenas Prácticas -->
+              <div class="p-4 rounded-2xl bg-slate-50/80 border border-slate-200 flex flex-col items-center text-center">
+                <div class="relative w-20 h-20 flex items-center justify-center mb-2">
+                  <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <path class="text-slate-200 stroke-current stroke-[3.5]" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path id="score-bp-circle" class="stroke-current stroke-[3.5] transition-all duration-1000 ease-out" stroke-dasharray="0, 100" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <span id="score-bp-val" class="absolute text-xl font-display font-extrabold text-dark">--</span>
+                </div>
+                <span class="text-xs font-bold text-dark">Seguridad</span>
+                <span class="text-[11px] font-medium text-slate-500">Buenas Prácticas</span>
+              </div>
+
+            </div>
+
+            <!-- Core Web Vitals Key Metrics -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <span class="text-xs font-bold text-slate-700 uppercase tracking-wider font-mono block">Métricas Clave de Google (Core Web Vitals):</span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                  <span class="text-slate-400 block font-mono">FCP (Primer contenido)</span>
+                  <span id="metric-fcp" class="text-base font-bold text-dark mt-0.5 block">--</span>
+                </div>
+                <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                  <span class="text-slate-400 block font-mono">LCP (Carga visual)</span>
+                  <span id="metric-lcp" class="text-base font-bold text-dark mt-0.5 block">--</span>
+                </div>
+                <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                  <span class="text-slate-400 block font-mono">TBT (Bloqueo inicial)</span>
+                  <span id="metric-tbt" class="text-base font-bold text-dark mt-0.5 block">--</span>
+                </div>
+                <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                  <span class="text-slate-400 block font-mono">CLS (Estabilidad)</span>
+                  <span id="metric-cls" class="text-base font-bold text-dark mt-0.5 block">--</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Personalized Diagnostic Box with Lucía Recommendation & WhatsApp Lead Generator -->
+            <div id="pagespeed-verdict-box" class="p-6 sm:p-7 rounded-3xl bg-brand-50 border border-brand-200/80 space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                  <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1">
+                  <h5 class="text-lg font-display font-extrabold text-dark" id="verdict-title">Diagnóstico de Lucía</h5>
+                  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed" id="verdict-desc">
+                    Tu web tiene margen de mejora. Optimizar la velocidad y la estructura reducirá la pérdida de clientas en móviles.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Action button to contact Lucía with the audit result -->
+              <div class="pt-2">
+                <a 
+                  id="verdict-whatsapp-btn" 
+                  href="https://wa.me/34676354402" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold text-sm sm:text-base flex items-center justify-center gap-3 shadow-lg shadow-emerald-600/20 active:scale-95 transition-all">
+                  <svg class="w-5 h-5 fill-white" viewBox="0 0 448 512">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                  </svg>
+                  <span>Pedir a Lucía que optimice o rediseñe mi web por WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================
          SECCIÓN 5: BLOG DE MARKETING (10 Preguntas Clave Respondidas)
     ======================================================== -->
     <section id="blog" class="py-24 bg-surface-subtle border-t border-border-subtle relative overflow-hidden">
@@ -1890,6 +2125,192 @@
     legalModal.addEventListener('click', (e) => {
       if (e.target === legalModal) closeLegalModal();
     });
+
+    // ========================================================
+    // AUDITOR DE PÁGINAS WEB (GOOGLE PAGESPEED INSIGHTS API GRATIS)
+    // ========================================================
+    function setAuditUrl(demoUrl) {
+      const input = document.getElementById('pagespeed-url');
+      if (input) {
+        input.value = demoUrl;
+        runPageSpeedAudit();
+      }
+    }
+
+    async function runPageSpeedAudit(e) {
+      if (e) e.preventDefault();
+
+      const inputEl = document.getElementById('pagespeed-url');
+      if (!inputEl) return;
+      let rawUrl = inputEl.value.trim();
+      if (!rawUrl) return;
+
+      // Sanitizar formato de URL
+      if (!/^https?:\/\//i.test(rawUrl)) {
+        rawUrl = 'https://' + rawUrl;
+      }
+
+      const formBtn = document.getElementById('pagespeed-btn');
+      const loadingBox = document.getElementById('pagespeed-loading');
+      const loadingStep = document.getElementById('pagespeed-loading-step');
+      const progressBar = document.getElementById('pagespeed-progress-bar');
+      const errorBox = document.getElementById('pagespeed-error');
+      const errorMsg = document.getElementById('pagespeed-error-msg');
+      const resultsBox = document.getElementById('pagespeed-results');
+
+      // UI Reset
+      errorBox.classList.add('hidden');
+      resultsBox.classList.add('hidden');
+      loadingBox.classList.remove('hidden');
+      if (progressBar) progressBar.style.width = '20%';
+      if (formBtn) formBtn.disabled = true;
+
+      // Progress animation steps
+      const steps = [
+        { progress: '30%', text: 'Conectando con Google PageSpeed API...' },
+        { progress: '55%', text: 'Ejecutando auditoría Lighthouse en dispositivo móvil...' },
+        { progress: '75%', text: 'Calculando Core Web Vitals (FCP, LCP, CLS, TBT)...' },
+        { progress: '90%', text: 'Analizando SEO, accesibilidad y buenas prácticas...' }
+      ];
+
+      let stepIdx = 0;
+      const stepInterval = setInterval(() => {
+        if (stepIdx < steps.length) {
+          if (progressBar) progressBar.style.width = steps[stepIdx].progress;
+          if (loadingStep) loadingStep.textContent = steps[stepIdx].text;
+          stepIdx++;
+        }
+      }, 2200);
+
+      try {
+        const apiKey = 'AIzaSyCamBorxR4edznnsNj2m20VIyDRFa4wrvQ';
+        const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(rawUrl)}&category=PERFORMANCE&category=ACCESSIBILITY&category=BEST_PRACTICES&category=SEO&strategy=mobile&key=${apiKey}`;
+
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`Google PageSpeed API respondió con código HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        clearInterval(stepInterval);
+
+        if (!data.lighthouseResult || !data.lighthouseResult.categories) {
+          throw new Error('No se pudieron extraer las métricas de Lighthouse para esta URL.');
+        }
+
+        const cats = data.lighthouseResult.categories;
+        const audits = data.lighthouseResult.audits || {};
+
+        const perfScore = Math.round((cats.performance ? cats.performance.score : 0) * 100);
+        const seoScore = Math.round((cats.seo ? cats.seo.score : 0) * 100);
+        const accScore = Math.round((cats.accessibility ? cats.accessibility.score : 0) * 100);
+        const bpScore = Math.round((cats['best-practices'] ? cats['best-practices'].score : 0) * 100);
+
+        // Core Web Vitals
+        const fcp = audits['first-contentful-paint'] ? audits['first-contentful-paint'].displayValue : '--';
+        const lcp = audits['largest-contentful-paint'] ? audits['largest-contentful-paint'].displayValue : '--';
+        const tbt = audits['total-blocking-time'] ? audits['total-blocking-time'].displayValue : '--';
+        const cls = audits['cumulative-layout-shift'] ? audits['cumulative-layout-shift'].displayValue : '--';
+
+        // Render URL
+        const displayUrl = document.getElementById('result-url-display');
+        if (displayUrl) displayUrl.textContent = rawUrl.replace(/^https?:\/\//i, '');
+
+        // Render Score Badges and Circles
+        updateAuditScore('perf', perfScore);
+        updateAuditScore('seo', seoScore);
+        updateAuditScore('acc', accScore);
+        updateAuditScore('bp', bpScore);
+
+        // Render Core Web Vitals
+        const fcpEl = document.getElementById('metric-fcp');
+        const lcpEl = document.getElementById('metric-lcp');
+        const tbtEl = document.getElementById('metric-tbt');
+        const clsEl = document.getElementById('metric-cls');
+        if (fcpEl) fcpEl.textContent = fcp;
+        if (lcpEl) lcpEl.textContent = lcp;
+        if (tbtEl) tbtEl.textContent = tbt;
+        if (clsEl) clsEl.textContent = cls;
+
+        // Custom verdict & WhatsApp CTA lead pre-fill
+        const verdictTitle = document.getElementById('verdict-title');
+        const verdictDesc = document.getElementById('verdict-desc');
+        const whatsappBtn = document.getElementById('verdict-whatsapp-btn');
+
+        let diagTitle = '';
+        let diagDesc = '';
+
+        if (perfScore < 50) {
+          diagTitle = '⚠️ Rendimiento Crítico en Dispositivos Móviles';
+          diagDesc = `Tu web obtiene ${perfScore}/100 en velocidad móvil. Google penaliza páginas lentas en su buscador y más del 50% de los usuarios abandonan antes de cargar. Lucía puede rediseñarla con arquitectura ultrarrápida para alcanzar +90/100 y multiplicar tu conversión.`;
+        } else if (perfScore < 85) {
+          diagTitle = '⚡ Buen potencial con margen de optimización';
+          diagDesc = `Tu web tiene ${perfScore}/100 de velocidad y ${seoScore}/100 en SEO. Minimizando scripts, optimizando recursos multimedia y ajustando los puntos de fuga móviles ganarás más contactos comerciales.`;
+        } else {
+          diagTitle = '🏆 ¡Excelente rendimiento técnico!';
+          diagDesc = `¡Enhorabuena! Tu web cuenta con un gran rendimiento de ${perfScore}/100. Para escalar tus clientes y ventas, enfócate ahora en copy persuasivo, diseño visual de alta gama y campañas de redes sociales con Lucía.`;
+        }
+
+        if (verdictTitle) verdictTitle.textContent = diagTitle;
+        if (verdictDesc) verdictDesc.textContent = diagDesc;
+
+        if (whatsappBtn) {
+          const cleanDomain = rawUrl.replace(/^https?:\/\//i, '');
+          const waMessage = encodeURIComponent(
+            `Hola Lucía! He auditado mi web (${cleanDomain}) con tu auditor Google PageSpeed y he obtenido:\n` +
+            `• Velocidad móvil: ${perfScore}/100\n` +
+            `• SEO Google: ${seoScore}/100\n` +
+            `• Accesibilidad: ${accScore}/100\n\n` +
+            `Me gustaría que revisaras mi proyecto para optimizar mi página y conseguir más clientes.`
+          );
+          whatsappBtn.href = `https://wa.me/34676354402?text=${waMessage}`;
+        }
+
+        // Show results
+        loadingBox.classList.add('hidden');
+        resultsBox.classList.remove('hidden');
+
+      } catch (err) {
+        clearInterval(stepInterval);
+        loadingBox.classList.add('hidden');
+        errorBox.classList.remove('hidden');
+        if (errorMsg) {
+          errorMsg.textContent = `No se pudo completar la auditoría con Google: ${err.message}. Comprueba que la URL esté escrita correctamente y sea accesible públicamente en internet.`;
+        }
+      } finally {
+        if (formBtn) formBtn.disabled = false;
+        lucide.createIcons();
+      }
+    }
+
+    function updateAuditScore(prefix, score) {
+      const valEl = document.getElementById(`score-${prefix}-val`);
+      const circleEl = document.getElementById(`score-${prefix}-circle`);
+
+      if (!valEl || !circleEl) return;
+
+      valEl.textContent = score;
+
+      // Color mapping according to Google Lighthouse thresholds
+      circleEl.classList.remove('text-emerald-500', 'stroke-emerald-500', 'text-amber-500', 'stroke-amber-500', 'text-rose-500', 'stroke-rose-500');
+      valEl.classList.remove('text-emerald-600', 'text-amber-600', 'text-rose-600');
+
+      if (score >= 90) {
+        circleEl.classList.add('text-emerald-500', 'stroke-emerald-500');
+        valEl.classList.add('text-emerald-600');
+      } else if (score >= 50) {
+        circleEl.classList.add('text-amber-500', 'stroke-amber-500');
+        valEl.classList.add('text-amber-600');
+      } else {
+        circleEl.classList.add('text-rose-500', 'stroke-rose-500');
+        valEl.classList.add('text-rose-600');
+      }
+
+      // Stroke dasharray animation
+      setTimeout(() => {
+        circleEl.setAttribute('stroke-dasharray', `${score}, 100`);
+      }, 80);
+    }
   </script>
 </body>
 </html>
